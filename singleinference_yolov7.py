@@ -258,8 +258,8 @@ if __name__=='__main__':
 
     #LOAD & INFERENCE
     app.load_model() #Load the yolov7 model
-    app.read_img(path_img_i) #read in the jpg image from the full path, note not required if you want to load a cv2matrix instead directly
-    app.load_cv2mat() #load the OpenCV matrix, note could directly feed a cv2matrix here as app.load_cv2mat(cv2matrix)
+    app.read_img(path_img_i) #updated self.im0. read in the jpg image from the full path, note not required if you want to load a cv2matrix instead directly
+    app.load_cv2mat() #updates self.im. load the OpenCV matrix, note could directly feed a cv2matrix here as app.load_cv2mat(cv2matrix)
     app.inference() #make single inference
     app.show() #show results
     print(f'''
