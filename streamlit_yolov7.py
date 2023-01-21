@@ -158,7 +158,7 @@ if __name__=='__main__':
 
     #INPUTS for YOLOV7
     img_size=1056
-    path_yolov7_weights="weights/31_12_2022_05_35_25.pt"
+    path_yolov7_weights="https://github.com/rachana219/STREAMLIT_YOLOV7/blob/main/weights/31_12_2022_05_35_25.PT"
     path_img_i="https://raw.githubusercontent.com/stevensmiley1989/STREAMLIT_YOLOV7/main/test_images/DJI_0028_fps24_frame00000040.jpg"
     #INPUTS for webapp
     app.capt="Initial Image"
