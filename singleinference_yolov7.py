@@ -75,7 +75,7 @@ class SingleInference_YOLOV7:
         '''
         Loads the yolov7 model
 
-        self.path_yolov7_weights = r"/example_path/my_model/best.pt"
+        self.path_yolov7_weights = r"weights/31_12_2022_05_35_25.pt"
         self.device = '0' for gpu cuda 0, '' for cpu
 
         '''
