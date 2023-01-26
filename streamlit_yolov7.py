@@ -141,6 +141,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         self.capt='DETECTED:'
         if len(self.predicted_bboxes_PascalVOC)>0:
             for item in self.predicted_bboxes_PascalVOC:
+                st.write(item)
                 name=str(item[0])
                 conf=str(round(100*item[-1],2))
                 self.capt=self.capt+ ' name='+name+' confidence='+conf+'%, '
