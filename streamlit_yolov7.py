@@ -107,7 +107,6 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         self.response=requests.get(self.path_img_i)
 
         self.img_screen=Image.open(BytesIO(self.response.content))     
-        st.markdown(":blue[YoloV7 on streamlit.  Demo of object detection with YoloV7 with a web application.]")
        
         self.im0=np.array(self.img_screen.convert('RGB'))
         self.load_image_st()
