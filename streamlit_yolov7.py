@@ -145,7 +145,8 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             for item in self.predicted_bboxes_PascalVOC:
                 name=str(item[0])
                 conf=str(round(100*item[-1],2))
-                df = df.append({'name':name, 'x0': item[1],'y0': item[2],'x1': item[3],'y1': item[4],'score': conf}, ignore_index=True)
+                df = pd.concat([df, pd.DataFrame.from_records([{'name':name, 'x0': item[1],'y0': item[2],'x1': item[3],'y1': item[4],'score': conf}])])
+                #df = df.append({'name':name, 'x0': item[1],'y0': item[2],'x1': item[3],'y1': item[4],'score': conf}, ignore_index=True)
                 self.capt=self.capt+ ' name='+name+' confidence='+conf+'%, '
         st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
         st.table(df)
