@@ -109,7 +109,9 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         self.img_screen=Image.open(BytesIO(self.response.content))
 
         #st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB", #output_format="auto")
-        st.markdown('<p style="color:Blue;">YoloV7 on streamlit.  Demo of object detection with YoloV7 with a web application.</p>')
+		original_title = '<p style="color:Blue;">YoloV7 on streamlit.  Demo of object detection with YoloV7 with a web application.</p>'
+		st.markdown(original_title)
+        #st.markdown('<p style="color:Blue;">YoloV7 on streamlit.  Demo of object detection with YoloV7 with a web #application.</p>')
         self.im0=np.array(self.img_screen.convert('RGB'))
         self.load_image_st()
         predictions = st.button('Predict on the image?')
