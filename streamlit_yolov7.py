@@ -8,6 +8,7 @@ from PIL import Image
 from io import BytesIO
 import numpy as np
 import cv2
+import pandas as pd
 class Streamlit_YOLOV7(SingleInference_YOLOV7):
     '''
     streamlit app that uses yolov7
@@ -140,13 +141,13 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         
         self.capt='DETECTED:'
         if len(self.predicted_bboxes_PascalVOC)>0:
+            df = pd.DataFrame(self.predicted_bboxes_PascalVOC, columns = ['name','x0','y0','x1','y1','score'])
             for item in self.predicted_bboxes_PascalVOC:
-                for it in item:
-                  st.write(it)
                 name=str(item[0])
                 conf=str(round(100*item[-1],2))
                 self.capt=self.capt+ ' name='+name+' confidence='+conf+'%, '
         st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+        st.table(df)
         self.image=None
     
 
